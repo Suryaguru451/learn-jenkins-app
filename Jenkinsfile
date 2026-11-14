@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             agent {
@@ -18,6 +17,11 @@ pipeline {
                 npm run build
                 ls -la
                 '''
+            }
+        },
+        stage('Test') {
+            steps {
+                echo 'Running test stage...' 
             }
         }
     }
