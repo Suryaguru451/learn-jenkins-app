@@ -26,9 +26,9 @@ pipeline {
             }
         }
     }
-    post{
-        always{
-            junit 'test-results.xml'
+    post {
+    always {
+        junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
         }
     }
 }
